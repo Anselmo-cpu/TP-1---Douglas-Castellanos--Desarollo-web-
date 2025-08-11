@@ -112,7 +112,67 @@ img {
 }
 
 .contactanos {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+  color: #eee;
+  font-family: Arial, sans-serif;
+}
+
+.contactanos h2 {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.contactanos label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.contactanos input,
+.contactanos textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #eee;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.contactanos input:focus,
+.contactanos textarea:focus {
+  border-color: #66aaff;
+  outline: none;
+  background-color: #444;
+}
+
+.contactanos button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3366ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contactanos button:hover {
+  background-color: #254eda;
+}
+
+
+@media (max-width: 480px) {
+  .contactanos {
+    padding: 15px;
+    max-width: 100%;
+  }
 }
 
 footer {
@@ -166,4 +226,4 @@ footer a:hover {
   background-color: rgb(17.25, 17.25, 17.25);
   transform: translateY(-5px);
   cursor: pointer;
-}/*# sourceMappingURL=style.css.map */
+}
