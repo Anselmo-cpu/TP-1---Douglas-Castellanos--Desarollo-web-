@@ -285,3 +285,43 @@ footer a:hover {
     height: 40px;
   }
 }
+
+.nuestra-historia {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  color: #e0e0e0;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.nuestra-historia h2 {
+  color: #f97316;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nuestra-historia p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .nuestra-historia {
+    margin: 2rem 1rem;
+    padding: 1rem;
+  }
+
+  .nuestra-historia h2 {
+    font-size: 1.5rem;
+  }
+
+  .nuestra-historia p {
+    font-size: 0.9rem;
+  }
+}
