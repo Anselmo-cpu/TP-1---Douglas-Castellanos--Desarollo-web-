@@ -1,4 +1,4 @@
-/* Estilo general con modo oscuro y color naranja pastel */
+
 body {
     font-family: "Nunito", sans-serif;
     color: #e0e0e0;
@@ -77,7 +77,7 @@ img {
     margin-bottom: 1rem;
 }
 
-/* Video responsivo */
+
 .video-container {
     position: relative;
     width: 80%;
@@ -130,7 +130,7 @@ footer a:hover {
     }
 }
 
-/* Estilo de las cajas de cursos */
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
