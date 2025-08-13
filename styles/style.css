@@ -106,47 +106,36 @@ img, .center-img {
 }
 
 .video-container {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-  background-color: #1e1e1e;
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
 }
 
 .video-container iframe {
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
 }
 
-
-@media (max-width: 1024px) {
-  .video-container {
-    padding: 1.5rem;
-  }
-  .video-container iframe {
-    width: 90%;
-  }
+.video-container iframe:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 768px) {
-  .video-container {
-    padding: 1rem;
-  }
-  .video-container iframe {
-    width: 95%;
-  }
-}
 
 @media (max-width: 480px) {
   .video-container {
-    padding: 0.8rem;
-  }
-  .video-container iframe {
-    width: 100%;
+    padding: 1rem;
   }
 }
 
