@@ -139,6 +139,59 @@ img, .center-img {
   }
 }
 
+.btn-empeza {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0 auto;
+  padding: 14px 28px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f97316, #ff9a40, #f97316);
+  background-size: 200% 200%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  animation: gradientMove 3s ease infinite;
+}
+
+.btn-empeza:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+@media (max-width: 1024px) {
+  .btn-empeza {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-empeza {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-empeza {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+
 .contactanos {
   background-color: #222;
   padding: 20px;
