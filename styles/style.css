@@ -1,39 +1,32 @@
-
+/* Reset y box-sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   font-family: "Nunito", sans-serif;
   color: #e0e0e0;
- background-color: #121212;
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
 }
 
-/* --- img --- */
+/* Imágenes y elementos centrados */
 img, .center-img {
   max-width: 100%;
   height: auto;
   display: block;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
-.center { text-align: center; }
-
-.center-img {
-  max-width: 600px;
-  width: 100%;
- object-fit: cover;
-  padding: 12px;
- background-color: #1e1e1e;
+.center {
+  text-align: center;
 }
 
-/* --- contenedor pricipal --- */
+/* Contenedor principal */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -44,27 +37,30 @@ img, .center-img {
   border-radius: 12px;
 }
 
-/* --- header --- */
+/* Header */
 .header {
   background-color: #050505;
   padding: 10px 20px;
   display: flex;
- flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  border-bottom: 1px solid #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.header img, .header .center-img { height: 50px; max-width: 100%; }
+.header img {
+  height: 50px;
+  max-width: 100%;
+}
 
 .header nav ul {
   display: flex;
- flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
- list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .header nav ul li a {
@@ -72,8 +68,7 @@ img, .center-img {
   text-decoration: none;
   padding: 6px 12px;
   border-radius: 8px;
-  transition: 0.3s;
-  white-space: nowrap;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .header nav ul li a:hover {
@@ -81,7 +76,7 @@ img, .center-img {
   color: #121212;
 }
 
-/* --- titulos --- */
+/* Título animado */
 @keyframes colorLoop {
   0%, 100% { color: #f97316; }
   50% { color: white; }
@@ -94,42 +89,38 @@ img, .center-img {
   margin-bottom: 1rem;
 }
 
-/* --- video --- */
+/* Video */
 .video-container {
   text-align: center;
   padding: 1.5rem;
   background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.video-container:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.7); }
 
 .video-container iframe {
   width: 100%;
   max-width: 800px;
   aspect-ratio: 16/9;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-/* --- btn empeza --- */
+/* Botón Empezá tus clases */
 .btn-empeza {
-  display: block;
-  width: fit-content;
-  margin: 1.5rem auto;
+  display: inline-block;
+  margin: 1.5rem auto 0 auto;
   padding: 14px 28px;
   font-weight: bold;
   font-size: 1.2rem;
   color: #fff;
-  text-align: center;
+  text-decoration: none;
   border-radius: 12px;
   background: linear-gradient(135deg, #f97316, #ff9a40, #f97316);
   background-size: 200% 200%;
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-  animation: gradientMove 3s ease infinite;
   transition: all 0.4s ease;
+  animation: gradientMove 3s ease infinite;
 }
 
 .btn-empeza:hover {
@@ -143,7 +134,7 @@ img, .center-img {
   100% { background-position: 0% 50%; }
 }
 
-/* --- flex container (cursos) --- */
+/* Sección Cursos */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -161,54 +152,40 @@ img, .center-img {
   padding: 1.5rem;
   width: 200px;
   text-align: center;
-  transition: transform 0.2s ease, background-color 0.3s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.box:hover { background-color: #111; transform: translateY(-5px); cursor: pointer; }
-
-/* --- contacto --- */
-.contactanos {
-  background-color: #222;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
-  margin: 0 auto;
-  color: #e0e0e0;
+.box:hover {
+  background-color: #111;
+  transform: translateY(-5px);
+  cursor: pointer;
 }
 
-.contactanos input, .contactanos textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  background-color: #333;
-  color: #e0e0e0;
-}
-
-/* --- nuestra historia --- */
-.nuestra-historia, .por-que-elegirnos {
+/* Sección Por qué elegirnos */
+.por-que-elegirnos {
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 12px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  color: #fff;
   text-align: center;
-  background-color: #1e1e1e;
 }
 
-/* --- footer --- */
+/* Footer */
 .footer {
   background-color: #121212;
   color: #e0e0e0;
-  padding: 60px 20px 30px;
+  padding: 40px 20px;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -222,36 +199,55 @@ img, .center-img {
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-.footer-btn { margin-top: 10px; padding: 12px 25px; border-radius: 10px; background-color: #f97316; color: #121212; text-decoration: none; font-weight: bold; display:inline-block; }
+.footer-section h3 {
+  color: #f97316;
+  margin-bottom: 15px;
+}
 
-.footer-bottom { text-align: center; margin-top: 40px; font-size: 0.85rem; border-top:1px solid #333; padding-top:20px; }
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
 
-/* --- mediaqueries --- */
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #f97316;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+/* --- MEDIA QUERIES --- */
 @media (max-width: 1024px) {
-  .box { width: 150px; padding: 1rem; }
-  .btn-empeza { padding: 12px 24px; font-size: 1.1rem; }
-  .footer-container { gap: 30px; }
+  .box { width: 150px; }
 }
 
 @media (max-width: 768px) {
-  .header { flex-direction: column; gap: 0.5rem; }
-  .header nav ul { flex-direction: column; align-items: center; gap:0.5rem; }
-  .flex-container { flex-direction: column; padding: 1rem; }
+  .header { flex-direction: column; }
+  .header nav ul { flex-direction: column; }
+  .flex-container { flex-direction: column; }
   .box { width: 100%; max-width: 300px; margin-bottom: 1rem; }
   .video-container { width: 95%; }
   .container { width: 95%; padding: 1rem; }
-  .por-que-elegirnos, .nuestra-historia { padding: 1.5rem; }
 }
 
 @media (max-width: 480px) {
-  .titulo { font-size: clamp(1.2rem, 5vw, 2.5rem); }
-  .btn-empeza { padding: 8px 16px; font-size: 0.9rem; margin-top: 1rem; }
-  .box { width: 100%; padding: 1rem; max-width: 100%; }
-  .footer-section { width: 100%; text-align: center; }
-  .footer { padding: 40px 15px 20px; }
-  .contactanos { padding: 15px; max-width: 100%; }
-  .header img, .header .center-img { height: 40px; }
-  .video-container { padding: 1rem; }
-  .por-que-elegirnos h2, .nuestra-historia h2 { font-size: 1.5rem; }
-  .por-que-elegirnos p, .nuestra-historia p { font-size: 0.95rem; }
+  .titulo { font-size: 1.5rem; }
+  .btn-empeza { font-size: 0.9rem; padding: 8px 16px; }
+  .box { width: 100%; padding: 1rem; }
+  .footer-container { flex-direction: column; }
+  .footer-section { width: 100%; text-align: center; margin-bottom: 1rem; }
 }
