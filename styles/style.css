@@ -312,3 +312,35 @@ footer a:hover {
     font-size: 0.9rem;
   }
 }
+
+.por-que-elegirnos {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.por-que-elegirnos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+.por-que-elegirnos h2 {
+    font-size: 2rem;
+    color: #ffcc00;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.por-que-elegirnos p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin: 0;
+}
