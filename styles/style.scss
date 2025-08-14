@@ -13,6 +13,7 @@ $color-button-hover-bg: #254eda;
 $border-radius: 12px;
 $box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 
+
 @mixin flex-center($direction: row, $wrap: wrap, $justify: center, $align: center, $gap: 1rem) {
   display: flex;
   flex-direction: $direction;
@@ -21,6 +22,21 @@ $box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   align-items: $align;
   gap: $gap;
 }
+
+@mixin hover-transform($y: -5px, $scale: 1) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY($y) scale($scale);
+  }
+}
+
+@mixin card-style($bg: $color-bg-dark) {
+  background-color: $bg;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
 
 *,
 *::before,
@@ -36,7 +52,8 @@ body {
   padding: 0;
 }
 
-img {
+img,
+.center-img {
   max-width: 100%;
   height: auto;
   display: block;
@@ -49,7 +66,6 @@ img {
 }
 
 .center-img {
-  @extend img;
   max-width: 600px;
   width: 100%;
   object-fit: cover;
@@ -64,64 +80,65 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  background-color: $color-bg-dark;
+  @include card-style;
   padding: 2rem;
-  border-radius: $border-radius;
 }
 
 
 .header {
   background-color: rgb(5, 5, 5);
   padding: 10px 20px;
-  @include flex-center(row, wrap, space-between, center, 1rem);
+  @include flex-center($wrap: wrap, $justify: space-between);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid #333;
-
-  img {
+  
+  img,
+  .center-img {
     height: 50px;
     max-width: 100%;
   }
+  
+  nav ul {
+    @include flex-center($wrap: wrap);
+    padding: 0;
+    margin: 0;
+  }
+}
 
-  nav {
-    ul {
-      @include flex-center(row, wrap, center, center, 1rem);
-      padding: 0;
-      margin: 0;
 
-      .nav-li {
-        list-style: none;
-        text-align: center;
+.nav-li {
+  list-style: none;
+  text-align: center;
+}
 
-        .nav-link {
-          color: $color-text;
-          text-decoration: none;
-          padding: 6px 12px;
-          border-radius: 8px;
-          transition: background-color 0.3s, color 0.3s;
-          white-space: nowrap;
-
-          &:hover {
-            background-color: $color-accent-hover-bg;
-            color: $color-accent-hover-text;
-          }
-        }
-      }
-    }
+.nav-link {
+  color: $color-text;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
+  
+  &:hover {
+    background-color: $color-accent-hover-bg;
+    color: $color-accent-hover-text;
   }
 }
 
 
 @keyframes colorLoop {
-  0% {
-    color: $color-accent;
-  }
-  50% {
-    color: white;
-  }
-  100% {
-    color: $color-accent;
-  }
+  0% { color: $color-accent; }
+  50% { color: white; }
+  100% { color: $color-accent; }
 }
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
 .titulo {
   animation: colorLoop 2s infinite ease-in-out;
   font-size: clamp(1.5rem, 4vw, 3rem);
@@ -131,19 +148,52 @@ img {
 
 
 .video-container {
-  position: relative;
-  width: 80%;
-  max-width: 640px;
-  aspect-ratio: 16 / 9;
-  margin: 1.5rem auto;
-  overflow: hidden;
-
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+  border-radius: $border-radius;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  @include hover-transform;
+  
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  }
+  
   iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+
+.btn-empeza {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0 auto;
+  padding: 14px 28px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: $border-radius;
+  background: linear-gradient(135deg, $color-accent, #ff9a40, $color-accent);
+  background-size: 200% 200%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  animation: gradientMove 3s ease infinite;
+  
+  &:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -155,19 +205,18 @@ img {
   max-width: 400px;
   margin: 0 auto;
   color: $color-text;
-  font-family: Arial, sans-serif;
-
+  
   h2 {
     text-align: center;
     margin-bottom: 20px;
   }
-
+  
   label {
     display: block;
     margin-bottom: 6px;
     font-weight: bold;
   }
-
+  
   input,
   textarea {
     width: 100%;
@@ -179,14 +228,14 @@ img {
     color: $color-text;
     font-size: 1rem;
     resize: vertical;
-
+    
     &:focus {
       border-color: #66aaff;
       outline: none;
       background-color: $color-input-focus-bg;
     }
   }
-
+  
   button {
     width: 100%;
     padding: 12px;
@@ -196,7 +245,7 @@ img {
     color: white;
     font-weight: bold;
     cursor: pointer;
-
+    
     &:hover {
       background-color: $color-button-hover-bg;
     }
@@ -204,34 +253,97 @@ img {
 }
 
 
-footer {
-  background-color: rgb(5, 5, 5);
-  padding: 2rem;
+.footer {
+  background-color: $color-bg;
   color: $color-text;
-  text-align: center;
-  margin-top: 2rem;
-  border-top: 1px solid #333;
+  padding: 60px 20px 30px;
+}
 
-  a {
+.footer-container {
+  @include flex-center($justify: space-between, $gap: 40px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  @include card-style;
+  @include hover-transform;
+  
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  h3 {
     color: $color-accent;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  p,
+  li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 8px;
+    }
+  }
+  
+  a {
+    color: $color-text;
     text-decoration: none;
-
+    transition: color 0.3s;
+    
     &:hover {
-      text-decoration: underline;
+      color: $color-accent;
     }
   }
 }
 
+.footer-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 25px;
+  background-color: $color-accent;
+  color: $color-accent-hover-text;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  
+  &:hover {
+    background-color: #ffb84d;
+    transform: translateY(-3px);
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
 
 .flex-container {
-  @include flex-center(row, wrap, center, center, 1rem);
+  @include flex-center;
   padding: 2rem;
 }
 
 .box {
-  background-color: $color-bg-dark;
+  @include card-style;
   border: 1px solid #333;
-  border-radius: $border-radius;
   color: $color-accent;
   font-weight: bold;
   padding: 1.5rem;
@@ -239,8 +351,7 @@ footer {
   text-align: center;
   transition: transform 0.2s ease, background-color 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
-
+  
   &:hover {
     background-color: rgb(17, 17, 17);
     transform: translateY(-5px);
@@ -249,61 +360,33 @@ footer {
 }
 
 
-@media (max-width: 1024px) {
-  .container {
-    padding: 1rem;
-  }
-  .flex-container {
-    padding: 1rem;
-  }
-  .box {
-    width: 150px;
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .header nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .flex-container {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  .box {
-    width: 100%;
-    max-width: 300px;
+.nuestra-historia {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  @include card-style;
+  text-align: center;
+  
+  h2 {
+    color: $color-accent;
+    font-size: 2rem;
     margin-bottom: 1rem;
-  }
-  .video-container {
-    width: 95%;
-  }
-  .container {
-    width: 95%;
-    padding: 1rem;
+    text-transform: uppercase;
   }
 }
 
-@media (max-width: 480px) {
-  .contactanos {
-    padding: 15px;
-    max-width: 100%;
-  }
-  .titulo {
-    font-size: clamp(1.2rem, 5vw, 2.5rem);
-  }
-  .box {
-    width: 100%;
-    max-width: 100%;
-    padding: 1rem;
-  }
-  .header img {
-    height: 40px;
+.por-que-elegirnos {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, $color-bg-dark, #2c2c2c);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
   }
 }
