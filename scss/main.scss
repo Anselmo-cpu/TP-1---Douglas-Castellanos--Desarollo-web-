@@ -1,17 +1,19 @@
-// Base 
-@use "./partials/base/reset";
-@use "./partials/base/tipografia";
+// ===================================
+// ARCHIVO PRINCIPAL SASS (MODERNO)
+// ===================================
 
-//Components
-@use "./partials/components/header";
-@use "./partials/components/form";
-@use "./partials/components/general";
-@use "./partials/components/botones";
-@use "./partials/components/footer";
+// Usando @use con el sistema de módulos moderno de SASS
+@use 'partials' as *;
 
-//utilities
-@use "./partials/utilities/mixins";
-@use "./partials/utilities/extends";
-@use "./partials/utilities/media";
-@use "./partials/utilities/variable";
-@use "./partials/utilities/animations";
+// ===================================
+// APLICACIÓN DE ANIMACIONES EXTENDIDAS
+// ===================================
+
+// Extender animaciones a clases específicas
+.titulo {
+  @extend .animate-color-loop;
+}
+
+.btn-empeza {
+  @extend .animate-gradient-move;
+}

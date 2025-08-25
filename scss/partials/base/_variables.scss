@@ -1,0 +1,64 @@
+// ===================================
+// VARIABLES GLOBALES
+// ===================================
+
+// Colores de fondo
+$color-bg: #121212;
+$color-bg-dark: #1e1e1e;
+$color-contact-bg: #222;
+
+// Colores de texto
+$color-text: #e0e0e0;
+$color-white: white;
+
+// Colores de acento
+$color-accent: #f97316;
+$color-accent-hover-bg: #f97316;
+$color-accent-hover-text: #121212;
+$color-accent-secondary: #ff9a40;
+$color-accent-tertiary: #ffb84d;
+
+// Colores de inputs
+$color-input-bg: #333;
+$color-input-focus-bg: #444;
+$color-input-border: #555;
+$color-input-focus-border: #66aaff;
+
+// Colores de botones
+$color-button-bg: #3366ff;
+$color-button-hover-bg: #254eda;
+
+// Bordes y sombras
+$border-radius: 12px;
+$border-radius-small: 5px;
+$border-radius-medium: 8px;
+$border-radius-large: 15px;
+
+$box-shadow-primary: 0 4px 12px rgba(0, 0, 0, 0.6);
+$box-shadow-small: 0 2px 8px rgba(0, 0, 0, 0.4);
+$box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.4);
+$box-shadow-large: 0 6px 15px rgba(0, 0, 0, 0.6);
+$box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.6);
+
+// Gradientes
+$gradient-video: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+$gradient-button: linear-gradient(135deg, #{$color-accent}, #{$color-accent-secondary}, #{$color-accent});
+$gradient-section: linear-gradient(135deg, #{$color-bg-dark}, #2c2c2c);
+
+// Espaciado
+$spacing-xs: 6px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 40px;
+$spacing-2xl: 60px;
+
+// Tamaños
+$max-width-container: 1200px;
+$max-width-section: 800px;
+$max-width-form: 400px;
+$max-width-image: 600px;
+
+// Z-index
+$z-header: 100;
+$z-modal: 200;

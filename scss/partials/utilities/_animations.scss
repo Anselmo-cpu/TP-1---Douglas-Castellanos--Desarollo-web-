@@ -1,19 +1,36 @@
-@use "../utilities/variable";
+@use '../base/variables' as *;
 
+// ===================================
+// ANIMACIONES Y KEYFRAMES
+// ===================================
 
 @keyframes colorLoop {
-  0% { color: variable.$color-accent; }
-  50% { color: white; }
-  100% { color: variable.$color-accent; }
+  0% { 
+    color: $color-accent; 
+  }
+  50% { 
+    color: $color-white; 
+  }
+  100% { 
+    color: $color-accent; 
+  }
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+  100% { 
+    background-position: 0% 50%; 
+  }
 }
 
-
+// ===================================
+// CLASES DE ANIMACIÓN
+// ===================================
 
 .animate-color-loop {
   animation: colorLoop 2s infinite ease-in-out;
@@ -21,9 +38,4 @@
 
 .animate-gradient-move {
   animation: gradientMove 3s ease infinite;
-}
-
-
-.titulo {
-  @extend .animate-color-loop;
 }

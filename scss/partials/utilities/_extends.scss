@@ -1,0 +1,356 @@
+@use '../base/variables' as *;
+@use '../base/typography' as *;
+
+// ===================================
+// EXTENDS UTILITARIOS
+// ===================================
+
+// Placeholder para centrado con flexbox
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// Placeholder para grid layouts
+%grid-center {
+  display: grid;
+  place-items: center;
+}
+
+%grid-columns-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+}
+
+%grid-columns-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-md;
+}
+
+%grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-md;
+}
+
+// Placeholder para posicionamiento
+%absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+%fixed-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Placeholder para estilos de tarjetas
+%card-base {
+  background-color: $color-bg-dark;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-primary;
+  padding: $spacing-md;
+}
+
+%card-hover {
+  @extend %card-base;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+// Placeholder para botones
+%button-base {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  border: none;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+%button-primary {
+  @extend %button-base;
+  background: $gradient-button;
+  color: $color-white;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+%button-secondary {
+  @extend %button-base;
+  background-color: transparent;
+  color: $color-accent;
+  border: 2px solid $color-accent;
+  
+  &:hover {
+    background-color: $color-accent;
+    color: $color-bg-dark;
+  }
+}
+
+// Placeholder para inputs
+%input-base {
+  width: 100%;
+  padding: $spacing-sm;
+  border: 1px solid $color-input-border;
+  border-radius: $border-radius-small;
+  background-color: $color-input-bg;
+  color: $color-text;
+  font-size: $font-size-base;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  
+  &:focus {
+    border-color: $color-input-focus-border;
+    outline: none;
+    background-color: $color-input-focus-bg;
+  }
+}
+
+// Placeholder para enlaces
+%link-base {
+  color: $color-accent;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $color-accent-secondary;
+  }
+}
+
+%link-underline {
+  @extend %link-base;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color-accent;
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// Placeholder para textos
+%text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%text-multiline-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+%text-gradient {
+  background: $gradient-button;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Placeholder para imágenes
+%img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+%img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Placeholder para secciones
+%section-base {
+  padding: $spacing-xl 0;
+  max-width: $max-width-container;
+  margin: 0 auto;
+}
+
+%section-narrow {
+  @extend %section-base;
+  max-width: $max-width-section;
+}
+
+// Placeholder para contenedores
+%container-fluid {
+  width: 100%;
+  padding: 0 $spacing-md;
+}
+
+%container-fixed {
+  @extend %container-fluid;
+  max-width: $max-width-container;
+  margin: 0 auto;
+}
+
+// Placeholder para sombras
+%shadow-small {
+  box-shadow: $box-shadow-small;
+}
+
+%shadow-medium {
+  box-shadow: $box-shadow-medium;
+}
+
+%shadow-large {
+  box-shadow: $box-shadow-large;
+}
+
+%shadow-hover {
+  box-shadow: $box-shadow-hover;
+}
+
+// Placeholder para bordes
+%border-radius-small {
+  border-radius: $border-radius-small;
+}
+
+%border-radius-medium {
+  border-radius: $border-radius-medium;
+}
+
+%border-radius-large {
+  border-radius: $border-radius-large;
+}
+
+// Placeholder para transiciones
+%transition-fast {
+  transition: all 0.2s ease;
+}
+
+%transition-normal {
+  transition: all 0.3s ease;
+}
+
+%transition-slow {
+  transition: all 0.5s ease;
+}
+
+// Placeholder para estados de hover
+%hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+%hover-scale {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+%hover-glow {
+  transition: box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 0 20px rgba($color-accent, 0.5);
+  }
+}
+
+// Placeholder para responsive
+%mobile-first {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+%tablet-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+%desktop-up {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+%large-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// Placeholder para accesibilidad
+%sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+%focus-visible {
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+  }
+}

@@ -1,26 +1,33 @@
-@use "../utilities/animations";
-@use "../utilities/extends";
-@use "../utilities/media";
-@use "../utilities/mixins";
-@use "../utilities/variable";
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/extends' as *;
+
+// ===================================
+// ESTILOS DE BOTONES
+// ===================================
 
 .btn-empeza {
+  @extend %button-primary;
   display: block;
   width: fit-content;
   margin: 1.5rem auto 0 auto;
-  padding: 14px 28px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  border-radius: $border-radius;
-  background: linear-gradient(135deg, variable.$color-accent, #ff9a40, variable.$color-accent);
   background-size: 200% 200%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   @include smooth-transition(all, 0.4s);
-  @extend .animate-gradient-move;
   
   &:hover {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+.footer-btn {
+  @extend %button-secondary;
+  margin-top: $spacing-sm;
+  @include smooth-transition(background-color transform);
+  
+  &:hover {
+    background-color: $color-accent-tertiary;
+    transform: translateY(-3px);
   }
 }

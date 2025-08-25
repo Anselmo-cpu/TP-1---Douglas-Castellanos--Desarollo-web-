@@ -1,0 +1,22 @@
+// ===================================
+// ÍNDICE DE FORWARDING DE PARTIALS
+// ===================================
+
+// Base
+@forward 'base/variables';
+@forward 'base/reset';
+@forward 'base/typography';
+
+// Utilities
+@forward 'utilities/mixins';
+@forward 'utilities/animations';
+@forward 'utilities/media';
+@forward 'utilities/extends';
+
+// Components
+@forward 'components/header';
+@forward 'components/botones';
+@forward 'components/form';
+@forward 'components/footer';
+@forward 'components/general';
+@forward 'components/extends-examples';

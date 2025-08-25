@@ -1,50 +1,26 @@
-@use "../utilities/animations";
-@use "../utilities/extends";
-@use "../utilities/media";
-@use '../utilities/mixins' as mixins;
-@use '../utilities/variable' as variable;
+@use '../base/variables' as *;
+@use '../utilities/extends' as *;
 
-.header {
-  // Ejemplo de uso de mixin
-  @include mixins.flex-center($wrap: wrap, $justify: space-between);
-  // Ejemplo de uso de variable
-  color: variable.$color-text;
-  background: variable.$color-bg;
-  border-radius: variable.$border-radius;
-  box-shadow: variable.$box-shadow;
+// ===================================
+// ESTILOS DE MEDIA (IMÁGENES, VIDEOS)
+// ===================================
 
-  // Ejemplo de otros estilos usando variables
-  // background-color: variable.$color-contact-bg;
-  // color: variable.$color-accent;
-  // etc.
-
-  img,
-  .center-img {
-    height: 50px;
-    max-width: 100%;
-  }
-  
-  nav ul {
-    @include mixins.flex-center($wrap: wrap);
-    padding: 0;
-    margin: 0;
-  }
+img,
+.center-img {
+  @extend %img-responsive;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-primary;
 }
 
-.nav-li {
-  list-style: none;
+.center {
   text-align: center;
 }
 
-.nav-link {
-  color: variable.$color-text;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  // @include smooth-transition(background-color, color);
-  
-  &:hover {
-    background-color: variable.$color-accent-hover-bg;
-    color: variable.$color-accent-hover-text;
-  }
+.center-img {
+  @extend %img-cover;
+  max-width: $max-width-image;
+  width: 100%;
+  padding: 12px;
+  margin: 0 auto;
+  background-color: $color-bg-dark;
 }

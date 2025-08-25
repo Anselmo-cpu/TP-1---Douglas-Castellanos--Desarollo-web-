@@ -1,36 +1,40 @@
-@use "../utilities/animations";
-@use "../utilities/extends";
-@use "../utilities/media";
-@use "../utilities/mixins";
-@use "../utilities/variable";
+@use '../base/variables' as *;
+@use '../base/typography' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/extends' as *;
+
+// ===================================
+// FORMULARIO DE CONTACTO
+// ===================================
 
 .contactanos {
-  background-color: variable.$color-contact-bg;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
+  @extend %card-base;
+  background-color: $color-contact-bg;
+  padding: $spacing-lg;
+  border-radius: $border-radius-medium;
+  max-width: $max-width-form;
   margin: 0 auto;
-  color: variable.$color-text;
+  color: $color-text;
   
   h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: $spacing-lg;
   }
   
   label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: $spacing-xs;
     font-weight: $font-weight-bold;
   }
   
   input,
   textarea {
-    @include input-style;
+    @extend %input-base;
   }
   
   button {
+    @extend %button-primary;
     width: 100%;
     padding: 12px;
-    @include button-style(variable.$color-button-bg, variable.$color-button-hover-bg);
   }
 }

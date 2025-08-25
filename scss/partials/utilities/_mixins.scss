@@ -1,9 +1,18 @@
+@use '../base/variables' as *;
+@use '../base/typography' as *;
+
+// ===================================
+// MIXINS UTILITARIOS
+// ===================================
+
 // Mixin para centrar elementos con flexbox
-@mixin flex-center($wrap: nowrap, $justify: center) {
+@mixin flex-center($direction: row, $wrap: wrap, $justify: center, $align: center, $gap: 1rem) {
   display: flex;
+  flex-direction: $direction;
   flex-wrap: $wrap;
   justify-content: $justify;
-  align-items: center;
+  align-items: $align;
+  gap: $gap;
 }
 
 // Mixin para efectos de hover con transformaciones
@@ -19,7 +28,7 @@
 @mixin card-style($bg: $color-bg-dark) {
   background-color: $bg;
   border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  box-shadow: $box-shadow-primary;
 }
 
 // Mixin para transiciones suaves
@@ -28,13 +37,13 @@
 }
 
 // Mixin para botones
-@mixin button-style($bg-color, $hover-bg-color, $text-color: white) {
+@mixin button-style($bg-color, $hover-bg-color, $text-color: $color-white) {
   background-color: $bg-color;
   color: $text-color;
   border: none;
-  border-radius: 5px;
+  border-radius: $border-radius-small;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   @include smooth-transition(background-color);
   
   &:hover {
@@ -45,18 +54,18 @@
 // Mixin para inputs
 @mixin input-style {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #555;
-  border-radius: 5px;
+  padding: $spacing-sm;
+  margin-bottom: $spacing-md;
+  border: 1px solid $color-input-border;
+  border-radius: $border-radius-small;
   background-color: $color-input-bg;
   color: $color-text;
   font-size: $font-size-base;
   resize: vertical;
-  @include smooth-transition(border-color, background-color);
+  @include smooth-transition(border-color background-color);
   
   &:focus {
-    border-color: #66aaff;
+    border-color: $color-input-focus-border;
     outline: none;
     background-color: $color-input-focus-bg;
   }
