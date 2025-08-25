@@ -1,0 +1,69 @@
+// ===================================
+// MIXINS REUTILIZABLES
+// ===================================
+
+// Mixin para centrar elementos con flexbox
+@mixin flex-center($direction: row, $wrap: wrap, $justify: center, $align: center, $gap: 1rem) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Mixin para efectos de hover con transformaciones
+@mixin hover-transform($y: -5px, $scale: 1) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY($y) scale($scale);
+  }
+}
+
+// Mixin para estilos de tarjetas
+@mixin card-style($bg: $color-bg-dark) {
+  background-color: $bg;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+// Mixin para transiciones suaves
+@mixin smooth-transition($properties: all, $duration: 0.3s, $easing: ease) {
+  transition: $properties $duration $easing;
+}
+
+// Mixin para botones
+@mixin button-style($bg-color, $hover-bg-color, $text-color: white) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  @include smooth-transition(background-color);
+  
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+}
+
+// Mixin para inputs
+@mixin input-style {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: $color-input-bg;
+  color: $color-text;
+  font-size: $font-size-base;
+  resize: vertical;
+  @include smooth-transition(border-color, background-color);
+  
+  &:focus {
+    border-color: #66aaff;
+    outline: none;
+    background-color: $color-input-focus-bg;
+  }
+}

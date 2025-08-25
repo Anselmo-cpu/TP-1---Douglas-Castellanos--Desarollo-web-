@@ -1,42 +1,16 @@
+// ===================================
+// ARCHIVO PRINCIPAL SASS
+// ===================================
 
-$color-bg: #121212;
-$color-bg-dark: #1e1e1e;
-$color-text: #e0e0e0;
-$color-accent: #f97316;
-$color-accent-hover-bg: #f97316;
-$color-accent-hover-text: #121212;
-$color-contact-bg: #222;
-$color-input-bg: #333;
-$color-input-focus-bg: #444;
-$color-button-bg: #3366ff;
-$color-button-hover-bg: #254eda;
-$border-radius: 12px;
-$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+// Importación de partials
+@import 'partials/colors';
+@import 'partials/typography';
+@import 'partials/mixins';
+@import 'partials/animations';
 
-
-@mixin flex-center($direction: row, $wrap: wrap, $justify: center, $align: center, $gap: 1rem) {
-  display: flex;
-  flex-direction: $direction;
-  flex-wrap: $wrap;
-  justify-content: $justify;
-  align-items: $align;
-  gap: $gap;
-}
-
-@mixin hover-transform($y: -5px, $scale: 1) {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY($y) scale($scale);
-  }
-}
-
-@mixin card-style($bg: $color-bg-dark) {
-  background-color: $bg;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-}
-
+// ===================================
+// ESTILOS GLOBALES
+// ===================================
 
 *,
 *::before,
@@ -45,12 +19,15 @@ $box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 body {
-  font-family: "Nunito", sans-serif;
   color: $color-text;
   background-color: $color-bg;
   margin: 0;
   padding: 0;
 }
+
+// ===================================
+// ESTILOS DE IMÁGENES
+// ===================================
 
 img,
 .center-img {
@@ -74,6 +51,9 @@ img,
   background-color: $color-bg-dark;
 }
 
+// ===================================
+// LAYOUT PRINCIPAL
+// ===================================
 
 .container {
   width: 90%;
@@ -84,13 +64,16 @@ img,
   padding: 2rem;
 }
 
+// ===================================
+// HEADER Y NAVEGACIÓN
+// ===================================
 
 .header {
   background-color: rgb(5, 5, 5);
   padding: 10px 20px;
   @include flex-center($wrap: wrap, $justify: space-between);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid #333;
+  margin-bottom: 1rem;
   
   img,
   .center-img {
@@ -105,7 +88,6 @@ img,
   }
 }
 
-
 .nav-li {
   list-style: none;
   text-align: center;
@@ -116,8 +98,7 @@ img,
   text-decoration: none;
   padding: 6px 12px;
   border-radius: 8px;
-  transition: background-color 0.3s, color 0.3s;
-  white-space: nowrap;
+  @include smooth-transition(background-color, color);
   
   &:hover {
     background-color: $color-accent-hover-bg;
@@ -125,27 +106,9 @@ img,
   }
 }
 
-
-@keyframes colorLoop {
-  0% { color: $color-accent; }
-  50% { color: white; }
-  100% { color: $color-accent; }
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-
-.titulo {
-  animation: colorLoop 2s infinite ease-in-out;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  color: $color-accent;
-  margin-bottom: 1rem;
-}
-
+// ===================================
+// COMPONENTES DE VIDEO
+// ===================================
 
 .video-container {
   text-align: center;
@@ -165,7 +128,7 @@ img,
     aspect-ratio: 16 / 9;
     border-radius: $border-radius;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    transition: box-shadow 0.3s ease;
+    @include smooth-transition(box-shadow);
     
     &:hover {
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
@@ -173,14 +136,15 @@ img,
   }
 }
 
+// ===================================
+// BOTONES
+// ===================================
 
 .btn-empeza {
   display: block;
   width: fit-content;
   margin: 1.5rem auto 0 auto;
   padding: 14px 28px;
-  font-weight: bold;
-  font-size: 1.2rem;
   color: #fff;
   text-decoration: none;
   text-align: center;
@@ -188,8 +152,8 @@ img,
   background: linear-gradient(135deg, $color-accent, #ff9a40, $color-accent);
   background-size: 200% 200%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  transition: all 0.4s ease;
-  animation: gradientMove 3s ease infinite;
+  @include smooth-transition(all, 0.4s);
+  @extend .animate-gradient-move;
   
   &:hover {
     transform: translateY(-4px) scale(1.05);
@@ -197,6 +161,9 @@ img,
   }
 }
 
+// ===================================
+// FORMULARIO DE CONTACTO
+// ===================================
 
 .contactanos {
   background-color: $color-contact-bg;
@@ -214,44 +181,24 @@ img,
   label {
     display: block;
     margin-bottom: 6px;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
   }
   
   input,
   textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background-color: $color-input-bg;
-    color: $color-text;
-    font-size: 1rem;
-    resize: vertical;
-    
-    &:focus {
-      border-color: #66aaff;
-      outline: none;
-      background-color: $color-input-focus-bg;
-    }
+    @include input-style;
   }
   
   button {
     width: 100%;
     padding: 12px;
-    background-color: $color-button-bg;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    
-    &:hover {
-      background-color: $color-button-hover-bg;
-    }
+    @include button-style($color-button-bg, $color-button-hover-bg);
   }
 }
 
+// ===================================
+// FOOTER
+// ===================================
 
 .footer {
   background-color: $color-bg;
@@ -278,15 +225,6 @@ img,
   
   h3 {
     color: $color-accent;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  p,
-  li {
-    font-size: 0.95rem;
-    line-height: 1.6;
   }
   
   ul {
@@ -302,7 +240,7 @@ img,
   a {
     color: $color-text;
     text-decoration: none;
-    transition: color 0.3s;
+    @include smooth-transition(color);
     
     &:hover {
       color: $color-accent;
@@ -318,8 +256,7 @@ img,
   color: $color-accent-hover-text;
   border-radius: 10px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
+  @include smooth-transition(background-color, transform);
   
   &:hover {
     background-color: #ffb84d;
@@ -330,11 +267,13 @@ img,
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
-  font-size: 0.85rem;
   border-top: 1px solid #333;
   padding-top: 20px;
 }
 
+// ===================================
+// COMPONENTES GENERALES
+// ===================================
 
 .flex-container {
   @include flex-center;
@@ -345,11 +284,10 @@ img,
   @include card-style;
   border: 1px solid #333;
   color: $color-accent;
-  font-weight: bold;
   padding: 1.5rem;
   width: 200px;
   text-align: center;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  @include smooth-transition(transform, background-color, 0.2s);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   
   &:hover {
@@ -358,7 +296,6 @@ img,
     cursor: pointer;
   }
 }
-
 
 .nuestra-historia {
   max-width: 800px;
@@ -369,8 +306,6 @@ img,
   
   h2 {
     color: $color-accent;
-    font-size: 2rem;
-    margin-bottom: 1rem;
     text-transform: uppercase;
   }
 }
@@ -383,7 +318,7 @@ img,
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  @include smooth-transition(transform, box-shadow);
   
   &:hover {
     transform: translateY(-5px);

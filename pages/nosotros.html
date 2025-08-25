@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Ansel Classes</title>
 
 </head>
@@ -18,8 +18,8 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/logo/Ansel.png" alt="Logo de Ansel Classes" height="50">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/logo/Ansel.png" alt="Logo de Ansel Classes" height="50">
                 </a>
         
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,19 +30,19 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Menu</a>
+                            <a class="nav-link" href="../index.html">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./Pages/cursos.html">Cursos</a>
+                            <a class="nav-link" href="./cursos.html">Cursos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./Pages/nosotros.html">Nosotros</a>
+                            <a class="nav-link active" href="#" aria-current="page">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./Pages/profesores.html">Profesores</a>
+                            <a class="nav-link" href="./profesores.html">Profesores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./Pages/redes.html">Redes</a>
+                            <a class="nav-link" href="./redes.html">Redes</a>
                         </li>
                         </ul>
                 </div>
@@ -50,21 +50,28 @@
         </nav>
     </header>
 
-    <main>
-        <div class="container">
-                <h1 class="titulo">Buscas tocar asi?</h1>
-            <div class="video-container">    
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/oB9tyiUk5BA?si=OADgc5_I_9yNCjYW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-            </div> 
-                <br>
-                <br>
-                <a href="./Pages/cursos.html" class="btn-empeza">Empezá tus clases!</a>
-                <br>
-                <br>   
-        </div>
-    </main>
+    <main>  
+       <section class="nuestra-historia">
+        <h2>Nuestra historia</h2>
+            <p>
+                Ansel Classes nació hace unos años en un barrio porteño, cuando Anselmo Castellanos, un pibe con una guitarra a cuestas y un sueño enorme, decidió compartir su pasión por la música con quienes lo rodeaban. Entre mates, charlas y muchas horas de ensayo, fue armando algo que empezó siendo un grupo chico, casi una juntada de amigos que querían aprender y tocar.
+            </p>
 
-<footer class="footer">
+            <p>
+                Con el tiempo, la cosa fue creciendo. Más pibes y pibas de distintos barrios, con ganas de hacer ruido y contar su historia a través de la música, se acercaron. Así, lo que empezó como un proyecto humilde se convirtió en una escuela que no sólo enseña técnica, sino también transmite el fuego y la garra que caracteriza a nuestra tierra.
+            </p>
+
+                En Ansel Classes creemos que la música es parte de nuestra identidad, de la cultura argentina, y que cada alumno que pasa por nuestras aulas suma su voz a ese legado. La escuela es mucho más que un lugar para aprender; es una familia donde se cultiva la amistad, la creatividad y la pasión por seguir creciendo.
+            </p>
+
+            <p>
+                Y acá seguimos, con los pies en la tierra y la mirada en el futuro, listos para seguir acompañando a cada nuevo músico que se anima a dar sus primeros acordes y a descubrir todo lo que puede lograr con dedicación y corazón.
+            </p>
+        </section>
+    </main>
+<hr>
+
+     <footer class="footer">
 
         <div class="footer-container">
 
@@ -76,18 +83,18 @@
         <div class="footer-section">
                   <h3>Explorá</h3>
                 <ul>
-                  <li><a href="./Pages/cursos.html">Nuestros Cursos</a></li>
-                  <li><a href="./Pages/nosotros.html">Nuestra Historia</a></li>
-                  <li><a href="./Pages/profesores.html">Profesores</a></li>
-                  <li><a href="./Pages/redes.html">Redes y Contacto</a></li>
-                  <li><a href="#">Ya estás aquí</a></li>
+                  <li><a href="./cursos.html">Nuestros Cursos</a></li>
+                  <li><a href="#">Nuestra Historia</a></li>
+                  <li><a href="./profesores.html">Profesores</a></li>
+                  <li><a href="./redes.html">Redes y Contacto</a></li>
+                  <li><a href="../index.html">Volver al inicio</a></li>
               </ul>
           </div>
 
           <div class="footer-section">
               <h3>Unite a nosotros</h3>
               <p>Comenzá tus clases hoy mismo.</p>
-            <a href="./Pages/redes.html" class="footer-btn">Empezá tus Clases</a>
+            <a href="./redes.html" class="footer-btn">Empezá tus Clases</a>
         </div>
 
   </div>
@@ -97,7 +104,7 @@
         </div>
 
 </footer>
-  
+   
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

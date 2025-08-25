@@ -1,0 +1,92 @@
+// ===================================
+// VARIABLES DE TIPOGRAFÍA
+// ===================================
+
+// Familia de fuentes
+$font-family-primary: "Nunito", sans-serif;
+
+// Tamaños de fuente
+$font-size-small: 0.85rem;
+$font-size-base: 1rem;
+$font-size-medium: 1.2rem;
+$font-size-large: 1.5rem;
+$font-size-xl: 2rem;
+$font-size-xxl: 3rem;
+$font-size-responsive: clamp(1.5rem, 4vw, 3rem);
+
+// Peso de fuentes
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Altura de línea
+$line-height-tight: 1.4;
+$line-height-normal: 1.6;
+$line-height-loose: 1.8;
+
+// Espaciado de letras
+$letter-spacing-normal: normal;
+$letter-spacing-wide: 1px;
+
+// ===================================
+// ESTILOS DE TIPOGRAFÍA
+// ===================================
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  font-weight: $font-weight-normal;
+}
+
+// Títulos principales
+.titulo {
+  font-size: $font-size-responsive;
+  font-weight: $font-weight-bold;
+  margin-bottom: 1rem;
+}
+
+// Títulos de sección
+h2 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: $font-size-large;
+  font-weight: $font-weight-bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+// Texto del footer
+.footer-bottom {
+  font-size: $font-size-small;
+}
+
+// Texto de párrafos y listas
+p, li {
+  font-size: 0.95rem;
+  line-height: $line-height-normal;
+}
+
+// Botones
+.btn-empeza {
+  font-weight: $font-weight-bold;
+  font-size: $font-size-medium;
+}
+
+.footer-btn {
+  font-weight: $font-weight-bold;
+}
+
+// Enlaces de navegación
+.nav-link {
+  white-space: nowrap;
+}
+
+// Cajas de texto
+.box {
+  font-weight: $font-weight-bold;
+}
