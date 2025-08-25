@@ -1,9 +1,8 @@
-@use "../partials/utilities/mixins";
-@use "../partials/utilities/extends";
-@use "../partials/utilities/media";
-@use "../partials/utilities/variables";
 @use "../utilities/animations";
-
+@use "../utilities/extends";
+@use "../utilities/media";
+@use "../utilities/mixins";
+@use "../utilities/variable";
 
 .btn-empeza {
   display: block;

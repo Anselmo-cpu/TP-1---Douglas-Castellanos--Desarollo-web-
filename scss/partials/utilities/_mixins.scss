@@ -1,13 +1,9 @@
-
-
 // Mixin para centrar elementos con flexbox
-@mixin flex-center($direction: row, $wrap: wrap, $justify: center, $align: center, $gap: 1rem) {
+@mixin flex-center($wrap: nowrap, $justify: center) {
   display: flex;
-  flex-direction: $direction;
   flex-wrap: $wrap;
   justify-content: $justify;
-  align-items: $align;
-  gap: $gap;
+  align-items: center;
 }
 
 // Mixin para efectos de hover con transformaciones
