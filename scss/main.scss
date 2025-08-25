@@ -1,0 +1,17 @@
+// Base 
+@use "./partials/base/reset";
+@use "./partials/base/tipografia";
+
+//Components
+@use "./partials/components/header";
+@use "./partials/components/form";
+@use "./partials/components/general";
+@use "./partials/components/botones";
+@use "./partials/components/footer";
+
+//utilities
+@use "./partials/utilities/mixins";
+@use "./partials/utilities/extends";
+@use "./partials/utilities/media";
+@use "./partials/utilities/variables";
+@use "./partials/utilities/animations";

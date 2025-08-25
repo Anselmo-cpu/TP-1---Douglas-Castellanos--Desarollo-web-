@@ -1,0 +1,101 @@
+@media (max-width: 767px) {
+
+  body {
+    font-size: 0.9rem;
+  }
+
+  .titulo {
+    font-size: clamp(1.3rem, 6vw, 2.2rem);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .container, .contactanos, .nuestra-historia, .por-que-elegirnos {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .box {
+    width: 90%;
+  }
+
+  .video-container iframe {
+    max-width: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* TABLETS: Pantallas entre 768px y 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .titulo {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .container, .contactanos, .nuestra-historia, .por-que-elegirnos {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flex-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .box {
+    width: 45%;
+  }
+
+  .video-container iframe {
+    max-width: 90%;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

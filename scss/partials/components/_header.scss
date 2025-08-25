@@ -1,0 +1,43 @@
+@use "../partials/utilities/mixins";
+@use "../partials/utilities/extends";
+@use "../partials/utilities/media";
+@use "../partials/utilities/variables";
+@use "../utilities/animations";
+
+.header {
+  background-color: rgb(5, 5, 5);
+  padding: 10px 20px;
+  @include flex-center($wrap: wrap, $justify: space-between);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  
+  img,
+  .center-img {
+    height: 50px;
+    max-width: 100%;
+  }
+  
+  nav ul {
+    @include flex-center($wrap: wrap);
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.nav-li {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-link {
+  color: $color-text;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  @include smooth-transition(background-color, color);
+  
+  &:hover {
+    background-color: variable.$color-accent-hover-bg;
+    color: variable.$color-accent-hover-text;
+  }
+}

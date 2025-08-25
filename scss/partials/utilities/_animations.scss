@@ -1,9 +1,9 @@
 
 
 @keyframes colorLoop {
-  0% { color: $color-accent; }
+  0% { color: variable.$color-accent; }
   50% { color: white; }
-  100% { color: $color-accent; }
+  100% { color: variable.$color-accent; }
 }
 
 @keyframes gradientMove {

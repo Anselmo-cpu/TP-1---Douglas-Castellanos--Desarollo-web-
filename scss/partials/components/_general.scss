@@ -1,0 +1,134 @@
+@use "../partials/utilities/mixins";
+@use "../partials/utilities/extends";
+@use "../partials/utilities/media";
+@use "../partials/utilities/variables";
+@use "../utilities/animations";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: variable.$color-text;
+  background-color: variable.$color-bg;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container {
+  @include flex-center;
+  padding: 2rem;
+}
+
+.box {
+  @include card-style;
+  border: 1px solid #333;
+  color: variable.$color-accent;
+  padding: 1.5rem;
+  width: 200px;
+  text-align: center;
+  @include smooth-transition(transform, background-color, 0.2s);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  
+  &:hover {
+    background-color: rgb(17, 17, 17);
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+}
+
+.nuestra-historia {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  @include card-style;
+  text-align: center;
+  
+  h2 {
+    color: variable.$color-accent;
+    text-transform: uppercase;
+  }
+}
+
+.por-que-elegirnos {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, variable.$color-bg-dark, #2c2c2c);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  @include smooth-transition(transform, box-shadow);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+  }
+}
+
+// componente de video 
+.video-container {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+  border-radius: $border-radius;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  @include hover-transform;
+  
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  }
+  
+  iframe {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    @include smooth-transition(box-shadow);
+    
+    &:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+// layout principal
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  @include card-style;
+  padding: 2rem;
+}
+
+
+// imagenes
+
+img,
+.center-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+.center {
+  text-align: center;
+}
+
+.center-img {
+  max-width: 600px;
+  width: 100%;
+  object-fit: cover;
+  padding: 12px;
+  margin: 0 auto;
+  background-color: variable.$color-bg-dark;
+}
+
+
+

@@ -1,0 +1,36 @@
+@use "../partials/utilities/mixins";
+@use "../partials/utilities/extends";
+@use "../partials/utilities/media";
+@use "../partials/utilities/variables";
+@use "../utilities/animations";
+
+.contactanos {
+  background-color: variable.$color-contact-bg;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+  color: variable.$color-text;
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: $font-weight-bold;
+  }
+  
+  input,
+  textarea {
+    @include input-style;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    @include button-style(variable.$color-button-bg, variable.$color-button-hover-bg);
+  }
+}
