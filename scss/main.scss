@@ -1,15 +1,8 @@
-// ===================================
-// ARCHIVO PRINCIPAL SASS (MODERNO)
-// ===================================
 
-// Usando @use con el sistema de módulos moderno de SASS
 @use 'partials' as *;
 
-// ===================================
-// APLICACIÓN DE ANIMACIONES EXTENDIDAS
-// ===================================
 
-// Extender animaciones a clases específicas
+
 .titulo {
   @extend .animate-color-loop;
 }

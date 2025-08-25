@@ -1,9 +1,10 @@
 @use '../base/variables' as *;
+@use '../base/typography' as *;
 @use '../utilities/extends' as *;
 
-// ===================================
-// ESTILOS DE MEDIA (IMÁGENES, VIDEOS)
-// ===================================
+
+// ESTILOS (IMÁGENES, VIDEOS)
+
 
 img,
 .center-img {
@@ -23,4 +24,51 @@ img,
   padding: 12px;
   margin: 0 auto;
   background-color: $color-bg-dark;
+}
+
+
+// ESTILOS DE NAV
+
+
+.navbar {
+  margin-bottom: $spacing-sm;
+  
+
+  width: 100%;
+  
+  // Estilos para el brand/logo
+  .navbar-brand {
+    img {
+      @extend %img-responsive;
+      height: 50px;
+      width: 50px;
+    }
+  }
+  
+  // Estilos para los enlaces de navegación
+  .nav-link {
+    @extend %link-base;
+    color: $color-white !important;
+    font-weight: $font-weight-bold;
+    padding: $spacing-sm $spacing-md;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $color-accent !important;
+    }
+    
+   
+    &.active {
+      color: $color-accent !important;
+    }
+  }
+  
+  
+  .navbar-toggler {
+    border: 1px solid $color-accent;
+    
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($color-accent, 0.25);
+    }
+  }
 }

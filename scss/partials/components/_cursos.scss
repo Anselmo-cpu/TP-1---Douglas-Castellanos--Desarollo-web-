@@ -1,0 +1,224 @@
+@use '../base/variables' as *;
+@use '../base/typography' as *;
+@use '../utilities/extends' as *;
+
+
+// estilos de cursos
+
+
+// Contenedor principal de cursos
+.cursos-container {
+  @extend %container-fixed;
+  padding: $spacing-xl 0;
+  
+  h1 {
+    @extend %text-gradient;
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+  }
+}
+
+// Grid de cursos
+.cursos-grid {
+  @extend %grid-responsive;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+  
+  // Responsive breakpoints
+  @include mobile-first {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+  }
+  
+  @include desktop-up {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-lg;
+  }
+}
+
+// Tarjeta individual de curso
+.curso-card {
+  @extend %card-base;
+  @extend %hover-lift;
+  @extend %shadow-medium;
+  
+  // Dimensiones y espaciado
+  min-height: 200px;
+  padding: $spacing-lg;
+  text-align: center;
+  border: 1px solid rgba($color-accent, 0.2);
+  transition: all 0.3s ease;
+  
+  // Hover effects
+  &:hover {
+    border-color: $color-accent;
+    transform: translateY(-8px);
+    box-shadow: $box-shadow-hover;
+  }
+  
+  // Título del curso
+  h2 {
+    color: $color-accent;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    
+    // Responsive font sizes
+    @include mobile-first {
+      font-size: $font-size-base;
+    }
+    
+    @include desktop-up {
+      font-size: $font-size-lg;
+    }
+  }
+  
+  // Descripción del curso
+  p {
+    color: $color-text;
+    font-size: $font-size-sm;
+    line-height: $line-height-normal;
+    margin: 0;
+    
+    // Responsive font sizes
+    @include mobile-first {
+      font-size: $font-size-xs;
+    }
+    
+    @include desktop-up {
+      font-size: $font-size-sm;
+    }
+  }
+  
+  // Variantes de curso para diferentes estilos musicales
+  &--clasica {
+    border-left: 4px solid #8B4513; 
+  }
+  
+  &--blues {
+    border-left: 4px solid #4169E1; 
+  }
+  
+  &--jazz {
+    border-left: 4px solid #FFD700; 
+  }
+  
+  &--rock {
+    border-left: 4px solid #DC143C; 
+  }
+  
+  &--hard-rock {
+    border-left: 4px solid #8B0000; 
+  }
+  
+  &--metal {
+    border-left: 4px solid #708090; 
+  }
+  
+  &--tango {
+    border-left: 4px solid #32CD32; 
+  }
+  
+  &--composicion {
+    border-left: 4px solid #9370DB; 
+  }
+}
+
+// Sección "Por qué elegirnos" 
+.por-que-elegirnos-cursos {
+  @extend %section-narrow;
+  @extend %card-base;
+  @extend %shadow-medium;
+  
+  margin: $spacing-2xl auto;
+  padding: $spacing-xl;
+  text-align: center;
+  
+  h2 {
+    color: $color-accent;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-lg;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+  }
+  
+  p {
+    color: $color-text;
+    font-size: $font-size-base;
+    line-height: $line-height-normal;
+    margin: 0;
+    
+    strong {
+      color: $color-accent;
+      font-weight: $font-weight-bold;
+    }
+    
+    em {
+      color: $color-accent-secondary;
+      font-style: italic;
+    }
+  }
+}
+
+// Responsive 
+@media (max-width: 767px) {
+  .cursos-grid {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+  
+  .curso-card {
+    min-height: 180px;
+    padding: $spacing-md;
+    
+    h2 {
+      font-size: $font-size-base;
+      margin-bottom: $spacing-sm;
+    }
+    
+    p {
+      font-size: $font-size-xs;
+    }
+  }
+  
+  .por-que-elegirnos-cursos {
+    padding: $spacing-lg;
+    margin: $spacing-xl auto;
+    
+    h2 {
+      font-size: $font-size-lg;
+    }
+    
+    p {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+// Animaciones 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.curso-card {
+  animation: fadeInUp 0.6s ease-out;
+  
+ 
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}

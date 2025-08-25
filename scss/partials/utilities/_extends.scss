@@ -1,9 +1,9 @@
 @use '../base/variables' as *;
 @use '../base/typography' as *;
 
-// ===================================
-// EXTENDS UTILITARIOS
-// ===================================
+
+// EXTENDS 
+
 
 // Placeholder para centrado con flexbox
 %flex-center {
@@ -192,6 +192,7 @@
 %text-multiline-truncate {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -310,26 +311,26 @@
   }
 }
 
-// Placeholder para responsive
-%mobile-first {
+// Mixins para responsive (no pueden ser extends por usar @content)
+@mixin mobile-first {
   @media (min-width: 768px) {
     @content;
   }
 }
 
-%tablet-up {
+@mixin tablet-up {
   @media (min-width: 768px) {
     @content;
   }
 }
 
-%desktop-up {
+@mixin desktop-up {
   @media (min-width: 1024px) {
     @content;
   }
 }
 
-%large-desktop-up {
+@mixin large-desktop-up {
   @media (min-width: 1200px) {
     @content;
   }

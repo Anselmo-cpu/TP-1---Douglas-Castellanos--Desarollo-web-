@@ -117,11 +117,154 @@ img,
   background-color: #1e1e1e;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.curso-card, .por-que-elegirnos-cursos, .container, .video-container, .box, .nuestra-historia, .contactanos, .footer-section {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  padding: 15px;
+}
+
+.footer-section {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.footer-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.footer-btn, .contactanos button, .btn-empeza {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contactanos button, .btn-empeza {
+  background: linear-gradient(135deg, #f97316, #ff9a40, #f97316);
+  color: white;
+}
+.contactanos button:hover, .btn-empeza:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.footer-btn {
+  background-color: transparent;
+  color: #f97316;
+  border: 2px solid #f97316;
+}
+.footer-btn:hover {
+  background-color: #f97316;
+  color: #1e1e1e;
+}
+
+.contactanos input,
+.contactanos textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #e0e0e0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.contactanos input:focus,
+.contactanos textarea:focus {
+  border-color: #66aaff;
+  outline: none;
+  background-color: #444;
+}
+
+.footer-section a, .navbar .nav-link {
+  color: #f97316;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-section a:hover, .navbar .nav-link:hover {
+  color: #ff9a40;
+}
+
+.cursos-container h1 {
+  background: linear-gradient(135deg, #f97316, #ff9a40, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 img,
-.center-img {
+.center-img, .navbar .navbar-brand img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.center-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.por-que-elegirnos-cursos, .nuestra-historia, .por-que-elegirnos {
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.por-que-elegirnos-cursos, .nuestra-historia, .por-que-elegirnos {
+  max-width: 800px;
+}
+
+.cursos-container, .container {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.cursos-container, .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.curso-card, .por-que-elegirnos-cursos {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.curso-card, .video-container, .box, .por-que-elegirnos {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.curso-card:hover, .video-container:hover, .box:hover, .por-que-elegirnos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+img,
+.center-img {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
@@ -133,11 +276,36 @@ img,
 .center-img {
   max-width: 600px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   padding: 12px;
   margin: 0 auto;
   background-color: #1e1e1e;
+}
+
+.navbar {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.navbar .navbar-brand img {
+  height: 50px;
+  width: 50px;
+}
+.navbar .nav-link {
+  color: white !important;
+  font-weight: 700;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+.navbar .nav-link:hover {
+  color: #f97316 !important;
+}
+.navbar .nav-link.active {
+  color: #f97316 !important;
+}
+.navbar .navbar-toggler {
+  border: 1px solid #f97316;
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(249, 115, 22, 0.25);
 }
 
 .btn-empeza {
@@ -145,12 +313,6 @@ img,
   width: -moz-fit-content;
   width: fit-content;
   margin: 1.5rem auto 0 auto;
-  padding: 14px 28px;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #f97316, #ff9a40, #f97316);
   background-size: 200% 200%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.4s ease;
@@ -161,13 +323,7 @@ img,
 }
 
 .footer-btn {
-  display: inline-block;
   margin-top: 10px;
-  padding: 12px 25px;
-  background-color: #f97316;
-  color: #121212;
-  border-radius: 10px;
-  text-decoration: none;
   transition: background-color transform 0.3s ease;
 }
 .footer-btn:hover {
@@ -192,38 +348,9 @@ img,
   margin-bottom: 6px;
   font-weight: 700;
 }
-.contactanos input,
-.contactanos textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  background-color: #333;
-  color: #e0e0e0;
-  font-size: 1rem;
-  resize: vertical;
-  transition: border-color background-color 0.3s ease;
-}
-.contactanos input:focus,
-.contactanos textarea:focus {
-  border-color: #66aaff;
-  outline: none;
-  background-color: #444;
-}
 .contactanos button {
   width: 100%;
   padding: 12px;
-  background-color: #3366ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: background-color 0.3s ease;
-}
-.contactanos button:hover {
-  background-color: #254eda;
 }
 
 .footer {
@@ -233,11 +360,6 @@ img,
 }
 
 .footer-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -247,16 +369,6 @@ img,
   flex: 1;
   min-width: 250px;
   padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.footer-section:hover {
-  transform: translateY(-5px) scale(1);
-}
-.footer-section:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 .footer-section h3 {
   color: #f97316;
@@ -271,8 +383,6 @@ img,
 }
 .footer-section a {
   color: #e0e0e0;
-  text-decoration: none;
-  transition: color 0.3s ease;
 }
 .footer-section a:hover {
   color: #f97316;
@@ -287,12 +397,7 @@ img,
 
 .container {
   width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
   text-align: center;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   padding: 2rem;
 }
 
@@ -300,15 +405,7 @@ img,
   text-align: center;
   padding: 1.5rem;
   background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
-  border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.video-container:hover {
-  transform: translateY(-5px) scale(1);
-}
-.video-container:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
 }
 .video-container iframe {
   width: 100%;
@@ -323,40 +420,25 @@ img,
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
   padding: 2rem;
 }
 
 .box {
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   border: 1px solid #333;
   color: #f97316;
   padding: 1.5rem;
   width: 200px;
   text-align: center;
-  transition: transform background-color 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.2s ease;
 }
 .box:hover {
   background-color: rgb(17, 17, 17);
-  transform: translateY(-5px);
   cursor: pointer;
 }
 
 .nuestra-historia {
-  max-width: 800px;
   margin: 3rem auto;
   padding: 1.5rem;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   text-align: center;
 }
 .nuestra-historia h2 {
@@ -365,16 +447,202 @@ img,
 }
 
 .por-que-elegirnos {
-  max-width: 800px;
   margin: 50px auto;
   padding: 40px 20px;
   background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   text-align: center;
-  transition: transform box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
-.por-que-elegirnos:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+
+.cursos-container {
+  padding: 40px 0;
+}
+.cursos-container h1 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cursos-grid {
+  gap: 20px;
+  margin-bottom: 60px;
+}
+@media (min-width: 768px) {
+  .cursos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .cursos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.curso-card {
+  min-height: 200px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  transition: all 0.3s ease;
+}
+.curso-card:hover {
+  border-color: #f97316;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+.curso-card h2 {
+  color: #f97316;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@media (min-width: 768px) {
+  .curso-card h2 {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .curso-card h2 {
+    font-size: 1.2rem;
+  }
+}
+.curso-card p {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .curso-card p {
+    font-size: 0.85rem;
+  }
+}
+@media (min-width: 1024px) {
+  .curso-card p {
+    font-size: 0.95rem;
+  }
+}
+.curso-card--clasica {
+  border-left: 4px solid #8B4513;
+}
+.curso-card--blues {
+  border-left: 4px solid #4169E1;
+}
+.curso-card--jazz {
+  border-left: 4px solid #FFD700;
+}
+.curso-card--rock {
+  border-left: 4px solid #DC143C;
+}
+.curso-card--hard-rock {
+  border-left: 4px solid #8B0000;
+}
+.curso-card--metal {
+  border-left: 4px solid #708090;
+}
+.curso-card--tango {
+  border-left: 4px solid #32CD32;
+}
+.curso-card--composicion {
+  border-left: 4px solid #9370DB;
+}
+
+.por-que-elegirnos-cursos {
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+}
+.por-que-elegirnos-cursos h2 {
+  color: #f97316;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.por-que-elegirnos-cursos p {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.por-que-elegirnos-cursos p strong {
+  color: #f97316;
+  font-weight: 700;
+}
+.por-que-elegirnos-cursos p em {
+  color: #ff9a40;
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .cursos-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .curso-card {
+    min-height: 180px;
+    padding: 15px;
+  }
+  .curso-card h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .curso-card p {
+    font-size: 0.85rem;
+  }
+  .por-que-elegirnos-cursos {
+    padding: 20px;
+    margin: 40px auto;
+  }
+  .por-que-elegirnos-cursos h2 {
+    font-size: 1.2rem;
+  }
+  .por-que-elegirnos-cursos p {
+    font-size: 0.95rem;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.curso-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+.curso-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.curso-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.curso-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.curso-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.curso-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.curso-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.curso-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.curso-card:nth-child(8) {
+  animation-delay: 0.8s;
 }/*# sourceMappingURL=main.css.map */

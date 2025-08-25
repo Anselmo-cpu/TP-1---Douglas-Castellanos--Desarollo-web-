@@ -2,9 +2,9 @@
 @use '../utilities/mixins' as *;
 @use '../utilities/extends' as *;
 
-// ===================================
-// ESTILOS DE BOTONES
-// ===================================
+
+// botones
+
 
 .btn-empeza {
   @extend %button-primary;

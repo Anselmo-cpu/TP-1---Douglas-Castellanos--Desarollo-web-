@@ -2,9 +2,9 @@
 @use '../utilities/mixins' as *;
 @use '../utilities/extends' as *;
 
-// ===================================
+
 // COMPONENTES GENERALES
-// ===================================
+
 
 .container {
   @extend %container-fixed;

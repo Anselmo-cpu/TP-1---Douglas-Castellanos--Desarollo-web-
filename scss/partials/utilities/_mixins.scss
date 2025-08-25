@@ -1,9 +1,9 @@
 @use '../base/variables' as *;
 @use '../base/typography' as *;
 
-// ===================================
-// MIXINS UTILITARIOS
-// ===================================
+
+// MIXINS 
+
 
 // Mixin para centrar elementos con flexbox
 @mixin flex-center($direction: row, $wrap: wrap, $justify: center, $align: center, $gap: 1rem) {

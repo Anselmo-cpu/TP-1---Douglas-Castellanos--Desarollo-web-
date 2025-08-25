@@ -1,27 +1,33 @@
 @use '../base/variables' as *;
 
-// ===================================
-// ESTILOS DE MEDIA (IMÁGENES, VIDEOS)
-// ===================================
 
-img,
-.center-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow-primary;
+// MEDIA 
+
+
+
+
+@media (max-width: 1024px) {
+  .center-img {
+    max-width: 80%;
+    padding: 10px;
+  }
 }
 
-.center {
-  text-align: center;
+@media (max-width: 768px) {
+  .center-img {
+    max-width: 90%;
+    padding: 6px;
+  }
+
+  .center {
+    text-align: left;
+  }
 }
 
-.center-img {
-  max-width: $max-width-image;
-  width: 100%;
-  object-fit: cover;
-  padding: 12px;
-  margin: 0 auto;
-  background-color: $color-bg-dark;
+@media (max-width: 480px) {
+  .center-img {
+    max-width: 100%;
+    padding: 2px;
+  }
 }
+

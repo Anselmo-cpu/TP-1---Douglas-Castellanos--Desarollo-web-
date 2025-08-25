@@ -1,8 +1,8 @@
 @use '../base/variables' as *;
 
-// ===================================
+
 // ANIMACIONES Y KEYFRAMES
-// ===================================
+
 
 @keyframes colorLoop {
   0% { 
@@ -28,9 +28,9 @@
   }
 }
 
-// ===================================
-// CLASES DE ANIMACIÓN
-// ===================================
+
+// clases de animacion
+
 
 .animate-color-loop {
   animation: colorLoop 2s infinite ease-in-out;

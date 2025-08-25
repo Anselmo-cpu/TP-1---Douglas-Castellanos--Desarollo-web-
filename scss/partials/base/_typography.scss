@@ -1,10 +1,10 @@
 @use 'variables' as *;
 
-// ===================================
-// TIPOGRAFÍA BASE
-// ===================================
 
-// Familia de fuentes
+// tipografia base
+
+
+
 $font-family-primary: "Nunito", sans-serif;
 
 // Tamaños de fuente
@@ -26,9 +26,9 @@ $line-height-normal: 1.6;
 // Espaciado de letras
 $letter-spacing-wide: 1px;
 
-// ===================================
+
 // ESTILOS TIPOGRÁFICOS
-// ===================================
+
 
 body {
   font-family: $font-family-primary;

@@ -3,9 +3,8 @@
 @use '../utilities/mixins' as *;
 @use '../utilities/extends' as *;
 
-// ===================================
-// FORMULARIO DE CONTACTO
-// ===================================
+// FORM
+
 
 .contactanos {
   @extend %card-base;
