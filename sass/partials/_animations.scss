@@ -1,6 +1,4 @@
-// ===================================
-// ANIMACIONES Y KEYFRAMES
-// ===================================
+
 
 @keyframes colorLoop {
   0% { color: $color-accent; }
@@ -14,9 +12,7 @@
   100% { background-position: 0% 50%; }
 }
 
-// ===================================
-// CLASES DE ANIMACIÓN
-// ===================================
+
 
 .animate-color-loop {
   animation: colorLoop 2s infinite ease-in-out;
@@ -26,7 +22,7 @@
   animation: gradientMove 3s ease infinite;
 }
 
-// Animación para el título principal
+
 .titulo {
   @extend .animate-color-loop;
 }
